@@ -25,12 +25,16 @@ router_movies = DefaultRouter()
 router_movies.register(r"movies", MovieViewSet)
 
 urlpatterns = [
-    path("api/cinema/genres/", GenreList.as_view(), name="genres-list"),
+    path(
+        "api/cinema/genres/",
+        GenreList.as_view(),
+        name="genres-list"
+    ),
     path(
         "api/cinema/genres/<int:pk>/",
-         GenreDetail.as_view(),
-         name="genre-detail"
-         ),
+        GenreDetail.as_view(),
+        name="genre-detail",
+    ),
     path(
         "api/cinema/actors/",
         ActorList.as_view(),
